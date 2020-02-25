@@ -1,17 +1,22 @@
 const cetak = (angka) => {
 	for (let i = 1; i <= angka; i++) {
+		let print = null;
+		let y = null;
 		if (i % 3 === 0) {
-			console.log(i + ' fish');
+			print = 'fish';
+			y = i;
 		}
 		if (i % 5 === 0) {
-			console.log(i + ' bash');
+			print = 'bash';
+			y = i;
 		}
 		if (i % 15 === 0) {
-			console.log(i + ' fish bash');
+			print = 'fish bash';
+			y = i;
 		}
+		y ? console.log(y + print) : '';
 	}
 };
-
 cetak(5);
 cetak(7);
 cetak(15);
@@ -50,16 +55,16 @@ const sortAsc = (array) => {
 sortAsc([ 7, 3, 2, 5 ]);
 sortAsc([ 7, 4, 2, 3 ]);
 
-const balik = (kata) => {
-	console.log(kata);
-	const kataBalik = kata.split('').reverse().join('');
-	console.log(kataBalik);
-	if (kataBalik === kata) {
+const reverseString = (kata) => {
+	let balikKata = '';
+	for (let i = kata.length - 1; i >= 0; i--) {
+		balikKata += kata[i];
+	}
+	if (kata === balikKata) {
 		return true;
 	} else {
 		return false;
 	}
 };
-
-balik('kata');
-balik('taat');
+reverseString('kata');
+reverseString('taat');
